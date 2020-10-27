@@ -121,6 +121,7 @@ export default function Form() {
                 (tweet) =>
                   !annotations.includes(tweet.id) && !skipped.includes(tweet.id)
               );
+              selectedTweets = selectedTweets.filter(tweet => tweet.annotations == null || tweet.annotations.length < 3);
               const selectedTweetId =
                 selectedTweets[
                   Math.floor(Math.random() * selectedTweets.length)
