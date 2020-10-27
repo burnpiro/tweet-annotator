@@ -135,7 +135,7 @@ export default function Form() {
                 [d.value[tweetIndex]].map((tweet) => (
                   <React.Fragment key={tweet.id}>
                     <Grid item xs={12}>
-                      <Tweet tweetContent={tweet.tweet} />
+                      <Tweet tweetContent={tweet.tweet} tweetId={"" + tweet.id + ""} />
                     </Grid>
                     {tweet && (
                       <FirebaseDatabaseMutation
