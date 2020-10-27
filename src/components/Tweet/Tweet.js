@@ -7,7 +7,10 @@ import CardContent from "@material-ui/core/CardContent";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import SnackbarContent from "@material-ui/core/SnackbarContent";
 import Icon from "@material-ui/core/Icon";
-import TweetEmbed from "react-tweet-embed";
+import {TwitterTweetEmbed} from 'react-twitter-embed'
+
+
+import './Tweet.css';
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -86,15 +89,13 @@ export default function Tweet({ tweetContent = "", tweetId }) {
                 </React.Fragment>
               }
             />
-            <CardContent className={classes.tweet}>
+            <CardContent className={"tweet-content"}>
               {loading && <CircularProgress />}
               {
-                <TweetEmbed
-                  onTweetLoadSuccess={onLoad}
-                  onTweetLoadError={onFail}
-                  className={classes.tweet}
-                  id={tweetId}
-                  options={{ dnt: true }}
+                <TwitterTweetEmbed
+                  onLoad={onLoad}
+                  tweetId={tweetId}
+                  options={{ maxWidth: 800, }}
                 />
               }
             </CardContent>
