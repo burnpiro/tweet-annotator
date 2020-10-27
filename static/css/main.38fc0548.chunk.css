@@ -12,5 +12,20 @@ code {
     monospace;
 }
 
+.tweet-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
 
-/*# sourceMappingURL=main.6dea0f05.chunk.css.map*/
+.tweet-content > div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+
+/*# sourceMappingURL=main.38fc0548.chunk.css.map*/
