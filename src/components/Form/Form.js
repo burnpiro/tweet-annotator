@@ -88,6 +88,7 @@ const idKey = "userId";
 export default function Form() {
   const classes = useStyles();
   const [settingSkip, setSettingSkip] = useState(null);
+  const [selectedTweet, setSelectedTweet] = useState(null)
   const [cookies, setCookies] = useCookies([cookieKey, idKey, skippedKey]);
 
   const annotations = cookies[cookieKey] || [];
@@ -101,6 +102,7 @@ export default function Form() {
     if (settingSkip != null) {
       setCookies(skippedKey, [...skipped, settingSkip], { maxAge: cookieAge });
       setSettingSkip(null);
+      setSelectedTweet(null);
     }
   }, [settingSkip]);
 
@@ -112,102 +114,112 @@ export default function Form() {
     <React.Fragment>
       <Grid container spacing={3}>
         {settingSkip == null && (
-          <FirebaseDatabaseNode path={path} orderByKey annotations skipped>
-            {(d) => {
-              if (!d.value) {
-                return null;
+          <React.Fragment>
+            <Grid item xs={12}>
+              {
+                selectedTweet && <Tweet tweetContent={selectedTweet.tweet} tweetId={"" + selectedTweet.id + ""} />
               }
-              let selectedTweets = d.value.filter(
-                (tweet) =>
-                  !annotations.includes(tweet.id) && !skipped.includes(tweet.id)
-              );
-              selectedTweets = selectedTweets.filter(tweet => tweet.annotations == null || tweet.annotations.length < 3);
-              const selectedTweetId =
-                selectedTweets[
-                  Math.floor(Math.random() * selectedTweets.length)
-                ].id;
-              const tweetIndex = d.value.findIndex(
-                (tweet) => tweet.id === selectedTweetId
-              );
-              return (
-                cookies[idKey] &&
-                d.value != null &&
-                [d.value[tweetIndex]].map((tweet) => (
-                  <React.Fragment key={tweet.id}>
-                    <Grid item xs={12}>
-                      <Tweet tweetContent={tweet.tweet} tweetId={"" + tweet.id + ""} />
-                    </Grid>
-                    {tweet && (
-                      <FirebaseDatabaseMutation
-                        type="update"
-                        path={path + `${tweetIndex}/`}
+            </Grid>
+
+            <React.Fragment>
+              {selectedTweet && (
+                <FirebaseDatabaseMutation
+                  type="update"
+                  path={path + `${selectedTweet.pos}/`}
+                >
+                  {({ runMutation }) => {
+                    return (
+                      <Grid
+                        container
+                        alignContent="center"
+                        justify="center"
+                        alignItems="center"
+                        className={classes.buttonContainer}
                       >
-                        {({ runMutation }) => {
-                          return (
-                            <Grid
-                              container
-                              alignContent="center"
-                              justify="center"
-                              alignItems="center"
-                              className={classes.buttonContainer}
-                            >
-                              {labels.map((label) => (
-                                <Button
-                                  key={label.id}
-                                  // variant="contained"
-                                  variant="outlined"
-                                  color="secondary"
-                                  className={classes.button}
-                                  onClick={async () => {
-                                    setCookies(
-                                      cookieKey,
-                                      [...annotations, tweet.id],
-                                      { maxAge: cookieAge }
-                                    );
-                                    const { key } = await runMutation({
-                                      ...tweet,
-                                      annotations: [
-                                        ...(tweet
-                                          ? tweet.annotations || []
-                                          : []),
-                                        label.id,
-                                      ],
-                                      annotatedBy: [
-                                        ...(tweet
-                                          ? tweet.annotatedBy || []
-                                          : []),
-                                        cookies[idKey],
-                                      ],
-                                    });
-                                  }}
-                                >
-                                  <img
-                                    className={classes.labelIcon}
-                                    src={label.icon}
-                                  />
-                                  {label.label}
-                                </Button>
-                              ))}
-                            </Grid>
-                          );
-                        }}
-                      </FirebaseDatabaseMutation>
-                    )}
-                    <div className={classes.buttons}>
-                      <Button
-                        variant="contained"
-                        color="secondary"
-                        onClick={() => handleSkip(tweet)}
-                        className={classes.button}
-                      >
-                        {"Skip :("}
-                      </Button>
-                    </div>
-                  </React.Fragment>
-                ))
-              );
-            }}
-          </FirebaseDatabaseNode>
+                        {labels.map((label) => (
+                          <Button
+                            key={label.id}
+                            // variant="contained"
+                            variant="outlined"
+                            color="secondary"
+                            className={classes.button}
+                            onClick={async () => {
+                              setCookies(
+                                cookieKey,
+                                [...annotations, selectedTweet.id],
+                                { maxAge: cookieAge }
+                              );
+                              const request = {
+                                id: selectedTweet.id,
+                                tweet: selectedTweet.tweet,
+                                annotations: [
+                                  ...(selectedTweet
+                                    ? selectedTweet.annotations || []
+                                    : []),
+                                  label.id,
+                                ],
+                                annotatedBy: [
+                                  ...(selectedTweet
+                                    ? selectedTweet.annotatedBy || []
+                                    : []),
+                                  cookies[idKey],
+                                ],
+                              }
+                              setSelectedTweet(null)
+                              const { key } = await runMutation(request);
+                            }}
+                          >
+                            <img
+                              className={classes.labelIcon}
+                              src={label.icon}
+                            />
+                            {label.label}
+                          </Button>
+                        ))}
+                      </Grid>
+                    );
+                  }}
+                </FirebaseDatabaseMutation>
+              )}
+              <div className={classes.buttons}>
+                <Button
+                  variant="contained"
+                  color="secondary"
+                  onClick={() => handleSkip(selectedTweet)}
+                  className={classes.button}
+                >
+                  {"Skip :("}
+                </Button>
+              </div>
+            </React.Fragment>
+            <FirebaseDatabaseNode path={path} orderByKey annotations skipped>
+              {(d) => {
+                if (!d.value) {
+                  return null;
+                }
+                let selectedTweets = d.value.filter(
+                  (tweet) =>
+                    !annotations.includes(tweet.id) &&
+                    !skipped.includes(tweet.id)
+                );
+                selectedTweets = selectedTweets.filter(
+                  (tweet) =>
+                    tweet.annotations == null || tweet.annotations.length < 3
+                );
+                const selectedTweetId =
+                  selectedTweets[
+                    Math.floor(Math.random() * selectedTweets.length)
+                  ].id;
+                const tweetIndex = d.value.findIndex(
+                  (tweet) => tweet.id === selectedTweetId
+                );
+                if (cookies[idKey] && d.value != null && selectedTweet == null) {
+                  setSelectedTweet({ ...d.value[tweetIndex], pos: tweetIndex })
+                }
+                return (<div />);
+              }}
+            </FirebaseDatabaseNode>
+          </React.Fragment>
         )}
       </Grid>
     </React.Fragment>
