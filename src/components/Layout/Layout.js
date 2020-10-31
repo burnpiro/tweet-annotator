@@ -7,7 +7,7 @@ import Paper from "@material-ui/core/Paper";
 import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
 import { useCookies } from "react-cookie";
-import {cookieKey} from "../../config";
+import {cookieKey, userKey} from "../../config";
 
 function Copyright() {
   return (
@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Layout({ children }) {
   const classes = useStyles();
-  const [cookies] = useCookies([cookieKey]);
+  const [cookies] = useCookies([cookieKey, userKey]);
 
   const annotations = cookies[cookieKey] || []
 
@@ -65,6 +65,12 @@ export default function Layout({ children }) {
           <Typography variant="h6" color="inherit" noWrap>
             Tweet annotator v1.0
           </Typography>
+          <span style={{'flex': 1}} />
+          {
+            annotations.length > 500 && <Typography variant="h6" color="inherit" noWrap>
+              Your ID is: <b style={{color: 'blue'}}>{cookies[userKey]} tweets</b>
+            </Typography>
+          }
           <span style={{'flex': 1}} />
           <Typography variant="h6" color="inherit" noWrap>
             You've annotated: <b style={{color: 'blue'}}>{annotations.length} tweets</b>

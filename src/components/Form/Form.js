@@ -17,7 +17,7 @@ import hapIcon from "./happiness.svg";
 import sadIcon from "./sad.svg";
 import shamIcon from "./shame.svg";
 import neutIcon from "./neutral.svg";
-import { cookieKey, skippedKey } from "../../config";
+import { cookieKey, skippedKey, userKey } from "../../config";
 
 const labels = [
   {
@@ -83,19 +83,18 @@ const useStyles = makeStyles((theme) => ({
 
 const path = "tweets/";
 const cookieAge = 60 * 60 * 24 * 365; //year
-const idKey = "userId";
 
 export default function Form() {
   const classes = useStyles();
   const [settingSkip, setSettingSkip] = useState(null);
   const [selectedTweet, setSelectedTweet] = useState(null)
-  const [cookies, setCookies] = useCookies([cookieKey, idKey, skippedKey]);
+  const [cookies, setCookies] = useCookies([cookieKey, userKey, skippedKey]);
 
   const annotations = cookies[cookieKey] || [];
   const skipped = cookies[skippedKey] || [];
 
-  if (cookies[idKey] == null) {
-    setCookies(idKey, nanoid(), { maxAge: cookieAge });
+  if (cookies[userKey] == null) {
+    setCookies(userKey, nanoid(), { maxAge: cookieAge });
   }
 
   useEffect(() => {
@@ -162,7 +161,7 @@ export default function Form() {
                                   ...(selectedTweet
                                     ? selectedTweet.annotatedBy || []
                                     : []),
-                                  cookies[idKey],
+                                  cookies[userKey],
                                 ],
                               }
                               setSelectedTweet(null)
@@ -213,7 +212,7 @@ export default function Form() {
                 const tweetIndex = d.value.findIndex(
                   (tweet) => tweet.id === selectedTweetId
                 );
-                if (cookies[idKey] && d.value != null && selectedTweet == null) {
+                if (cookies[userKey] && d.value != null && selectedTweet == null) {
                   setSelectedTweet({ ...d.value[tweetIndex], pos: tweetIndex })
                 }
                 return (<div />);
