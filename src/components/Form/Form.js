@@ -17,7 +17,8 @@ import hapIcon from "./happiness.svg";
 import sadIcon from "./sad.svg";
 import shamIcon from "./shame.svg";
 import neutIcon from "./neutral.svg";
-import { cookieKey, skippedKey, userKey } from "../../config";
+import { annotationKey, skippedKey, userKey } from "../../config";
+import useLocalStorage from "react-localstorage-hook";
 
 const labels = [
   {
@@ -88,10 +89,9 @@ export default function Form() {
   const classes = useStyles();
   const [settingSkip, setSettingSkip] = useState(null);
   const [selectedTweet, setSelectedTweet] = useState(null)
-  const [cookies, setCookies] = useCookies([cookieKey, userKey, skippedKey]);
-
-  const annotations = cookies[cookieKey] || [];
-  const skipped = cookies[skippedKey] || [];
+  const [cookies, setCookies] = useCookies([ userKey ]);
+  const [annotations, setAnnotations] = useLocalStorage(annotationKey)
+  const [skipped, setSkipped] = useLocalStorage(skippedKey)
 
   if (cookies[userKey] == null) {
     setCookies(userKey, nanoid(), { maxAge: cookieAge });
@@ -99,7 +99,7 @@ export default function Form() {
 
   useEffect(() => {
     if (settingSkip != null) {
-      setCookies(skippedKey, [...skipped, settingSkip], { maxAge: cookieAge });
+      setSkipped([...skipped, settingSkip]);
       setSettingSkip(null);
       setSelectedTweet(null);
     }
@@ -143,10 +143,8 @@ export default function Form() {
                             color="secondary"
                             className={classes.button}
                             onClick={async () => {
-                              setCookies(
-                                cookieKey,
-                                [...annotations, selectedTweet.id],
-                                { maxAge: cookieAge }
+                              setAnnotations(
+                                [...annotations, selectedTweet.id]
                               );
                               const request = {
                                 id: selectedTweet.id,
