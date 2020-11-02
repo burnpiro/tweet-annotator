@@ -1,6 +1,13 @@
 (this["webpackJsonptweet-annotator"] = this["webpackJsonptweet-annotator"] || []).push([[0],{
 
-/***/ 106:
+/***/ 105:
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ 211:
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
@@ -8,13 +15,6 @@
 /***/ }),
 
 /***/ 212:
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-
-/***/ 213:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -33,7 +33,7 @@ var react_dom = __webpack_require__(23);
 var react_dom_default = /*#__PURE__*/__webpack_require__.n(react_dom);
 
 // EXTERNAL MODULE: ./src/index.css
-var src = __webpack_require__(106);
+var src = __webpack_require__(105);
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/objectSpread2.js
 var objectSpread2 = __webpack_require__(25);
@@ -43,7 +43,7 @@ var index_cjs = __webpack_require__(91);
 var index_cjs_default = /*#__PURE__*/__webpack_require__.n(index_cjs);
 
 // EXTERNAL MODULE: ./node_modules/firebase/database/dist/index.esm.js
-var index_esm = __webpack_require__(107);
+var index_esm = __webpack_require__(106);
 
 // EXTERNAL MODULE: ./node_modules/@react-firebase/database/dist/index.esm.js + 1 modules
 var dist_index_esm = __webpack_require__(37);
@@ -51,9 +51,9 @@ var dist_index_esm = __webpack_require__(37);
 // EXTERNAL MODULE: ./node_modules/react-cookie/es6/CookiesProvider.js
 var CookiesProvider = __webpack_require__(250);
 
-// CONCATENATED MODULE: ./src/config.js
+// CONCATENATED MODULE: ./src/helpers/config.js
 // Firebase Config
-var config={apiKey:"AIzaSyAoAangmjRhPmpGj9TZ9EpAZJYqxpTCVH4",authDomain:"tweet-annotator-7b789.firebaseapp.com",databaseURL:"https://tweet-annotator-7b789.firebaseio.com",projectId:"tweet-annotator-7b789",storageBucket:"tweet-annotator-7b789.appspot.com",messagingSenderId:"1057840760122",appId:"1:1057840760122:web:c036eba1a841db18e7bc03"};var annotationKey="annotated_tweets";var skippedKey="skipped_tweets";var userKey="user_id";
+var config={apiKey:"AIzaSyAoAangmjRhPmpGj9TZ9EpAZJYqxpTCVH4",authDomain:"tweet-annotator-7b789.firebaseapp.com",databaseURL:"https://tweet-annotator-7b789.firebaseio.com",projectId:"tweet-annotator-7b789",storageBucket:"tweet-annotator-7b789.appspot.com",messagingSenderId:"1057840760122",appId:"1:1057840760122:web:c036eba1a841db18e7bc03"};
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/helpers/esm/slicedToArray.js + 3 modules
 var slicedToArray = __webpack_require__(10);
 
@@ -79,16 +79,36 @@ var Paper = __webpack_require__(67);
 var Link = __webpack_require__(238);
 
 // EXTERNAL MODULE: ./node_modules/@material-ui/core/esm/Typography/Typography.js
-var Typography = __webpack_require__(214);
+var Typography = __webpack_require__(213);
 
 // EXTERNAL MODULE: ./node_modules/react-cookie/es6/useCookies.js
 var useCookies = __webpack_require__(240);
 
+// CONCATENATED MODULE: ./src/helpers/happiness.svg
+/* harmony default export */ var happiness = (__webpack_require__.p + "static/media/happiness.4e02f678.svg");
+// CONCATENATED MODULE: ./src/helpers/fear.svg
+/* harmony default export */ var fear = (__webpack_require__.p + "static/media/fear.2470cbbc.svg");
+// CONCATENATED MODULE: ./src/helpers/anger.svg
+/* harmony default export */ var anger = (__webpack_require__.p + "static/media/anger.8528d165.svg");
+// CONCATENATED MODULE: ./src/helpers/neutral.svg
+/* harmony default export */ var neutral = (__webpack_require__.p + "static/media/neutral.5623396f.svg");
+// CONCATENATED MODULE: ./src/helpers/sad.svg
+/* harmony default export */ var sad = (__webpack_require__.p + "static/media/sad.2f887896.svg");
+// CONCATENATED MODULE: ./src/helpers/disgusted.svg
+/* harmony default export */ var disgusted = (__webpack_require__.p + "static/media/disgusted.0f4f8fc2.svg");
+// CONCATENATED MODULE: ./src/helpers/admiration.svg
+/* harmony default export */ var admiration = (__webpack_require__.p + "static/media/admiration.1c8ea55d.svg");
+// CONCATENATED MODULE: ./src/helpers/expectancy.svg
+/* harmony default export */ var expectancy = (__webpack_require__.p + "static/media/expectancy.7f622444.svg");
+// CONCATENATED MODULE: ./src/helpers/surprise-face.svg
+/* harmony default export */ var surprise_face = (__webpack_require__.p + "static/media/surprise-face.f36133bf.svg");
+// CONCATENATED MODULE: ./src/helpers/settings.js
+var labels=[{id:"radosc",label:"Radość",icon:happiness},{id:"smutek",label:"Smutek",icon:sad},{id:"guilt",label:"Podziw",icon:admiration},{id:"wstret",label:"Wstręt",icon:disgusted},{id:"zlosc",label:"Złość",icon:anger},{id:"strach",label:"Strach",icon:fear},{id:"zaskoczenie",label:"Zaskoczenie",icon:surprise_face},{id:"oczekiwanie",label:"Oczekiwanie",icon:expectancy},{id:"neutralne",label:"Neutralne",icon:neutral}];var annotationKey="annotated";var skippedKey="skipped";var userKey="user_id";
 // EXTERNAL MODULE: ./node_modules/react-localstorage-hook/dist/index.esm.js
 var react_localstorage_hook_dist_index_esm = __webpack_require__(26);
 
 // CONCATENATED MODULE: ./src/components/Layout/Layout.js
-function Copyright(){return/*#__PURE__*/Object(jsx_runtime["jsxs"])(Typography["a" /* default */],{variant:"body2",color:"textSecondary",align:"center",children:["Built with React and Material UI for ",/*#__PURE__*/Object(jsx_runtime["jsx"])(Link["a" /* default */],{color:"inherit",href:"https://pwr.edu.pl/en/",children:/*#__PURE__*/Object(jsx_runtime["jsx"])("b",{children:"WUST"})})," ",".",/*#__PURE__*/Object(jsx_runtime["jsx"])("br",{}),/*#__PURE__*/Object(jsx_runtime["jsxs"])("span",{style:{fontSize:10},children:["Icons made by ",/*#__PURE__*/Object(jsx_runtime["jsx"])(Link["a" /* default */],{href:"https://www.flaticon.com/authors/freepik",color:"inherit",title:"Freepik",children:"Freepik"})," from ",/*#__PURE__*/Object(jsx_runtime["jsx"])(Link["a" /* default */],{href:"https://www.flaticon.com/",color:"inherit",title:"Flaticon",children:"www.flaticon.com"})]})]});}var useStyles=Object(makeStyles["a" /* default */])(function(theme){return{appBar:{position:"relative"},layout:Object(defineProperty["a" /* default */])({width:"auto",marginLeft:theme.spacing(2),marginRight:theme.spacing(2)},theme.breakpoints.up(600+theme.spacing(2)*2),{width:1000,marginLeft:"auto",marginRight:"auto"}),paper:Object(defineProperty["a" /* default */])({marginTop:theme.spacing(3),marginBottom:theme.spacing(3),padding:theme.spacing(2)},theme.breakpoints.up(600+theme.spacing(3)*2),{marginTop:theme.spacing(6),marginBottom:theme.spacing(6),padding:theme.spacing(3)})};});function Layout(_ref){var children=_ref.children;var classes=useStyles();var _useCookies=Object(useCookies["a" /* default */])([annotationKey,userKey,skippedKey]),_useCookies2=Object(slicedToArray["a" /* default */])(_useCookies,1),cookies=_useCookies2[0];var _useLocalStorage=Object(react_localstorage_hook_dist_index_esm["a" /* default */])(annotationKey,[]),_useLocalStorage2=Object(slicedToArray["a" /* default */])(_useLocalStorage,2),storage=_useLocalStorage2[0],setStorage=_useLocalStorage2[1];var _useLocalStorage3=Object(react_localstorage_hook_dist_index_esm["a" /* default */])(skippedKey,[]),_useLocalStorage4=Object(slicedToArray["a" /* default */])(_useLocalStorage3,2),skipped=_useLocalStorage4[0],setSkipped=_useLocalStorage4[1];var annotations=cookies[annotationKey]||[];var skippedTweets=cookies[skippedKey]||[];Object(react["useEffect"])(function(){if(storage==null||Array.isArray(storage)&&storage.length===0||storage===''){setStorage(annotations);}if(skipped==null||Array.isArray(skipped)&&skipped.length===0||skipped===''){setSkipped(skippedTweets);}},[]);return/*#__PURE__*/Object(jsx_runtime["jsxs"])(react_default.a.Fragment,{children:[/*#__PURE__*/Object(jsx_runtime["jsx"])(CssBaseline["a" /* default */],{}),/*#__PURE__*/Object(jsx_runtime["jsx"])(AppBar["a" /* default */],{position:"absolute",color:"default",className:classes.appBar,children:/*#__PURE__*/Object(jsx_runtime["jsxs"])(Toolbar["a" /* default */],{children:[/*#__PURE__*/Object(jsx_runtime["jsx"])(Typography["a" /* default */],{variant:"h6",color:"inherit",noWrap:true,children:"Tweet annotator v1.0"}),/*#__PURE__*/Object(jsx_runtime["jsx"])("span",{style:{'flex':1}}),storage.length>500&&/*#__PURE__*/Object(jsx_runtime["jsxs"])(Typography["a" /* default */],{variant:"h6",color:"inherit",noWrap:true,children:["Your ID is: ",/*#__PURE__*/Object(jsx_runtime["jsxs"])("b",{style:{color:'blue'},children:[cookies[userKey]," tweets"]})]}),/*#__PURE__*/Object(jsx_runtime["jsx"])("span",{style:{'flex':1}}),/*#__PURE__*/Object(jsx_runtime["jsxs"])(Typography["a" /* default */],{variant:"h6",color:"inherit",noWrap:true,children:["You've annotated: ",/*#__PURE__*/Object(jsx_runtime["jsxs"])("b",{style:{color:'blue'},children:[storage.length," tweets"]})]})]})}),/*#__PURE__*/Object(jsx_runtime["jsxs"])("main",{className:classes.layout,children:[/*#__PURE__*/Object(jsx_runtime["jsx"])(Paper["a" /* default */],{className:classes.paper,children:/*#__PURE__*/Object(jsx_runtime["jsx"])(react_default.a.Fragment,{children:children})}),/*#__PURE__*/Object(jsx_runtime["jsx"])(Copyright,{})]})]});}
+function Copyright(){return/*#__PURE__*/Object(jsx_runtime["jsxs"])(Typography["a" /* default */],{variant:"body2",color:"textSecondary",align:"center",children:["Built with React and Material UI for ",/*#__PURE__*/Object(jsx_runtime["jsx"])(Link["a" /* default */],{color:"inherit",href:"https://pwr.edu.pl/en/",children:/*#__PURE__*/Object(jsx_runtime["jsx"])("b",{children:"WUST"})})," ",".",/*#__PURE__*/Object(jsx_runtime["jsx"])("br",{}),/*#__PURE__*/Object(jsx_runtime["jsxs"])("span",{style:{fontSize:10},children:["Icons made by ",/*#__PURE__*/Object(jsx_runtime["jsx"])(Link["a" /* default */],{href:"https://www.flaticon.com/authors/freepik",color:"inherit",title:"Freepik",children:"Freepik"})," from ",/*#__PURE__*/Object(jsx_runtime["jsx"])(Link["a" /* default */],{href:"https://www.flaticon.com/",color:"inherit",title:"Flaticon",children:"www.flaticon.com"})]})]});}var useStyles=Object(makeStyles["a" /* default */])(function(theme){return{appBar:{position:"relative"},layout:Object(defineProperty["a" /* default */])({width:"auto",marginLeft:theme.spacing(2),marginRight:theme.spacing(2)},theme.breakpoints.up(600+theme.spacing(2)*2),{width:1000,marginLeft:"auto",marginRight:"auto"}),paper:Object(defineProperty["a" /* default */])({marginTop:theme.spacing(3),marginBottom:theme.spacing(3),padding:theme.spacing(2)},theme.breakpoints.up(600+theme.spacing(3)*2),{marginTop:theme.spacing(6),marginBottom:theme.spacing(6),padding:theme.spacing(3)})};});function Layout(_ref){var children=_ref.children;var classes=useStyles();var _useCookies=Object(useCookies["a" /* default */])([annotationKey,userKey,skippedKey]),_useCookies2=Object(slicedToArray["a" /* default */])(_useCookies,2),cookies=_useCookies2[0],setCookie=_useCookies2[1];var _useLocalStorage=Object(react_localstorage_hook_dist_index_esm["a" /* default */])(annotationKey,[]),_useLocalStorage2=Object(slicedToArray["a" /* default */])(_useLocalStorage,2),storage=_useLocalStorage2[0],setStorage=_useLocalStorage2[1];var _useLocalStorage3=Object(react_localstorage_hook_dist_index_esm["a" /* default */])(skippedKey,[]),_useLocalStorage4=Object(slicedToArray["a" /* default */])(_useLocalStorage3,2),skipped=_useLocalStorage4[0],setSkipped=_useLocalStorage4[1];var annotations=cookies[annotationKey]||[];var skippedTweets=cookies[skippedKey]||[];Object(react["useEffect"])(function(){if(storage==null||Array.isArray(storage)&&storage.length===0||storage===''){setStorage(annotations);setCookie(annotationKey,[]);}if(skipped==null||Array.isArray(skipped)&&skipped.length===0||skipped===''){setSkipped(skippedTweets);setCookie(skippedKey,[]);}},[]);return/*#__PURE__*/Object(jsx_runtime["jsxs"])(react_default.a.Fragment,{children:[/*#__PURE__*/Object(jsx_runtime["jsx"])(CssBaseline["a" /* default */],{}),/*#__PURE__*/Object(jsx_runtime["jsx"])(AppBar["a" /* default */],{position:"absolute",color:"default",className:classes.appBar,children:/*#__PURE__*/Object(jsx_runtime["jsxs"])(Toolbar["a" /* default */],{children:[/*#__PURE__*/Object(jsx_runtime["jsx"])(Typography["a" /* default */],{variant:"h6",color:"inherit",noWrap:true,children:"Tweet annotator v1.0"}),/*#__PURE__*/Object(jsx_runtime["jsx"])("span",{style:{'flex':1}}),storage.length>500&&/*#__PURE__*/Object(jsx_runtime["jsxs"])(Typography["a" /* default */],{variant:"h6",color:"inherit",noWrap:true,children:["Your ID is: ",/*#__PURE__*/Object(jsx_runtime["jsxs"])("b",{style:{color:'blue'},children:[cookies[userKey]," tweets"]})]}),/*#__PURE__*/Object(jsx_runtime["jsx"])("span",{style:{'flex':1}}),/*#__PURE__*/Object(jsx_runtime["jsxs"])(Typography["a" /* default */],{variant:"h6",color:"inherit",noWrap:true,children:["You've annotated: ",/*#__PURE__*/Object(jsx_runtime["jsxs"])("b",{style:{color:'blue'},children:[storage.length," tweets"]})]})]})}),/*#__PURE__*/Object(jsx_runtime["jsxs"])("main",{className:classes.layout,children:[/*#__PURE__*/Object(jsx_runtime["jsx"])(Paper["a" /* default */],{className:classes.paper,children:/*#__PURE__*/Object(jsx_runtime["jsx"])(react_default.a.Fragment,{children:children})}),/*#__PURE__*/Object(jsx_runtime["jsx"])(Copyright,{})]})]});}
 // EXTERNAL MODULE: ./node_modules/@babel/runtime/regenerator/index.js
 var regenerator = __webpack_require__(66);
 var regenerator_default = /*#__PURE__*/__webpack_require__.n(regenerator);
@@ -127,28 +147,12 @@ var Icon = __webpack_require__(245);
 var index_es = __webpack_require__(94);
 
 // EXTERNAL MODULE: ./src/components/Tweet/Tweet.css
-var Tweet = __webpack_require__(212);
+var Tweet = __webpack_require__(211);
 
 // CONCATENATED MODULE: ./src/components/Tweet/Tweet.js
 var Tweet_useStyles=Object(makeStyles["a" /* default */])(function(theme){return{card:{backgroundColor:"rgba(29, 161, 242, 0.1)"},tweet:{width:"100%",display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center"},error:{backgroundColor:"#f44336",color:"#fff",fontWeight:500},errorMessage:{textAlign:"center",display:"flex",flexDirection:"row",justifyContent:"center",alignItems:"center"},info:{backgroundColor:'#2196f336',color:"#000",fontWeight:500}};});function Tweet_Tweet(_ref){var _ref$tweetContent=_ref.tweetContent,tweetContent=_ref$tweetContent===void 0?"":_ref$tweetContent,tweetId=_ref.tweetId;var classes=Tweet_useStyles();var _useState=Object(react["useState"])(true),_useState2=Object(slicedToArray["a" /* default */])(_useState,2),loading=_useState2[0],setLoading=_useState2[1];var _useState3=Object(react["useState"])(false),_useState4=Object(slicedToArray["a" /* default */])(_useState3,2),error=_useState4[0],setError=_useState4[1];var onLoad=function onLoad(){setLoading(false);};var onFail=function onFail(){setLoading(false);setError(true);};if(error===true){return/*#__PURE__*/Object(jsx_runtime["jsx"])(SnackbarContent["a" /* default */],{className:classes.error,message:/*#__PURE__*/Object(jsx_runtime["jsx"])(react_default.a.Fragment,{children:/*#__PURE__*/Object(jsx_runtime["jsxs"])("span",{className:classes.errorMessage,children:[/*#__PURE__*/Object(jsx_runtime["jsx"])(Icon["a" /* default */],{style:{marginRight:"10px"},children:"error_outline"}),"Ups... There is a problem with this tweet. Please check if you have Adblock Disabled and if you have then just skip this tweet."]})})});}return tweetId&&/*#__PURE__*/Object(jsx_runtime["jsx"])(react_default.a.Fragment,{children:/*#__PURE__*/Object(jsx_runtime["jsx"])(Grid["a" /* default */],{item:true,xs:12,children:/*#__PURE__*/Object(jsx_runtime["jsxs"])(Card["a" /* default */],{className:classes.card,children:[/*#__PURE__*/Object(jsx_runtime["jsx"])(SnackbarContent["a" /* default */],{className:classes.info,message:/*#__PURE__*/Object(jsx_runtime["jsx"])(react_default.a.Fragment,{children:/*#__PURE__*/Object(jsx_runtime["jsxs"])("span",{className:classes.errorMessage,children:[/*#__PURE__*/Object(jsx_runtime["jsx"])(Icon["a" /* default */],{style:{marginRight:"10px"},children:"help_outlined_outlined"}),"If there is a problem loading a tweet, please disable Adblock."]})})}),/*#__PURE__*/Object(jsx_runtime["jsxs"])(CardContent["a" /* default */],{className:"tweet-content",children:[loading&&/*#__PURE__*/Object(jsx_runtime["jsx"])(CircularProgress["a" /* default */],{}),/*#__PURE__*/Object(jsx_runtime["jsx"])(index_es["a" /* TwitterTweetEmbed */],{onLoad:onLoad,tweetId:tweetId,options:{maxWidth:800}})]})]})})});}
-// CONCATENATED MODULE: ./src/components/Form/anger.svg
-/* harmony default export */ var anger = (__webpack_require__.p + "static/media/anger.8528d165.svg");
-// CONCATENATED MODULE: ./src/components/Form/disgusted.svg
-/* harmony default export */ var disgusted = (__webpack_require__.p + "static/media/disgusted.0f4f8fc2.svg");
-// CONCATENATED MODULE: ./src/components/Form/fear.svg
-/* harmony default export */ var fear = (__webpack_require__.p + "static/media/fear.2470cbbc.svg");
-// CONCATENATED MODULE: ./src/components/Form/guilt.svg
-/* harmony default export */ var guilt = (__webpack_require__.p + "static/media/guilt.90a5c032.svg");
-// CONCATENATED MODULE: ./src/components/Form/happiness.svg
-/* harmony default export */ var happiness = (__webpack_require__.p + "static/media/happiness.4e02f678.svg");
-// CONCATENATED MODULE: ./src/components/Form/sad.svg
-/* harmony default export */ var sad = (__webpack_require__.p + "static/media/sad.2f887896.svg");
-// CONCATENATED MODULE: ./src/components/Form/shame.svg
-/* harmony default export */ var shame = (__webpack_require__.p + "static/media/shame.12d88091.svg");
-// CONCATENATED MODULE: ./src/components/Form/neutral.svg
-/* harmony default export */ var neutral = (__webpack_require__.p + "static/media/neutral.5623396f.svg");
 // CONCATENATED MODULE: ./src/components/Form/Form.js
-var labels=[{id:"joy",label:"Joy",icon:happiness},{id:"fear",label:"Fear",icon:fear},{id:"anger",label:"Anger",icon:anger},{id:"neutral",label:"Neutral",icon:neutral},{id:"sadness",label:"Sadness",icon:sad},{id:"disgust",label:"Disgust",icon:disgusted},{id:"shame",label:"Shame",icon:shame},{id:"guilt",label:"Guilt",icon:guilt}];var Form_useStyles=Object(makeStyles["a" /* default */])(function(theme){return{buttons:{display:"flex",justifyContent:"flex-end"},buttonContainer:{margin:"auto"},button:{marginTop:theme.spacing(3),marginLeft:theme.spacing(1),fontSize:"1rem"},labelIcon:{height:theme.spacing(6),marginRight:theme.spacing(2)}};});var path="tweets/";var cookieAge=60*60*24*365;//year
+var Form_useStyles=Object(makeStyles["a" /* default */])(function(theme){return{buttons:{display:"flex",justifyContent:"flex-end"},buttonContainer:{margin:"auto"},button:{marginTop:theme.spacing(3),marginLeft:theme.spacing(1),fontSize:"1rem"},labelIcon:{height:theme.spacing(6),marginRight:theme.spacing(2)}};});var path="tweets/";var cookieAge=60*60*24*365;//year
 function Form(){var classes=Form_useStyles();var _useState=Object(react["useState"])(null),_useState2=Object(slicedToArray["a" /* default */])(_useState,2),settingSkip=_useState2[0],setSettingSkip=_useState2[1];var _useState3=Object(react["useState"])(null),_useState4=Object(slicedToArray["a" /* default */])(_useState3,2),selectedTweet=_useState4[0],setSelectedTweet=_useState4[1];var _useCookies=Object(useCookies["a" /* default */])([userKey]),_useCookies2=Object(slicedToArray["a" /* default */])(_useCookies,2),cookies=_useCookies2[0],setCookies=_useCookies2[1];var _useLocalStorage=Object(react_localstorage_hook_dist_index_esm["a" /* default */])(annotationKey),_useLocalStorage2=Object(slicedToArray["a" /* default */])(_useLocalStorage,2),annotations=_useLocalStorage2[0],setAnnotations=_useLocalStorage2[1];var _useLocalStorage3=Object(react_localstorage_hook_dist_index_esm["a" /* default */])(skippedKey),_useLocalStorage4=Object(slicedToArray["a" /* default */])(_useLocalStorage3,2),skipped=_useLocalStorage4[0],setSkipped=_useLocalStorage4[1];if(cookies[userKey]==null){setCookies(userKey,Object(index_browser["a" /* nanoid */])(),{maxAge:cookieAge});}Object(react["useEffect"])(function(){if(settingSkip!=null){setSkipped([].concat(Object(toConsumableArray["a" /* default */])(skipped),[settingSkip]));setSettingSkip(null);setSelectedTweet(null);}},[settingSkip]);var handleSkip=function handleSkip(tweet){setSettingSkip(tweet.id);};return/*#__PURE__*/Object(jsx_runtime["jsx"])(react_default.a.Fragment,{children:/*#__PURE__*/Object(jsx_runtime["jsx"])(Grid["a" /* default */],{container:true,spacing:3,children:settingSkip==null&&/*#__PURE__*/Object(jsx_runtime["jsxs"])(react_default.a.Fragment,{children:[/*#__PURE__*/Object(jsx_runtime["jsx"])(Grid["a" /* default */],{item:true,xs:12,children:selectedTweet&&/*#__PURE__*/Object(jsx_runtime["jsx"])(Tweet_Tweet,{tweetContent:selectedTweet.tweet,tweetId:""+selectedTweet.id+""})}),/*#__PURE__*/Object(jsx_runtime["jsxs"])(react_default.a.Fragment,{children:[selectedTweet&&/*#__PURE__*/Object(jsx_runtime["jsx"])(dist_index_esm["a" /* FirebaseDatabaseMutation */],{type:"update",path:path+"".concat(selectedTweet.pos,"/"),children:function children(_ref){var runMutation=_ref.runMutation;return/*#__PURE__*/Object(jsx_runtime["jsx"])(Grid["a" /* default */],{container:true,alignContent:"center",justify:"center",alignItems:"center",className:classes.buttonContainer,children:labels.map(function(label){return/*#__PURE__*/Object(jsx_runtime["jsxs"])(Button["a" /* default */],{// variant="contained"
 variant:"outlined",color:"secondary",className:classes.button,onClick:/*#__PURE__*/Object(asyncToGenerator["a" /* default */])(/*#__PURE__*/regenerator_default.a.mark(function _callee(){var request,_yield$runMutation,key;return regenerator_default.a.wrap(function _callee$(_context){while(1){switch(_context.prev=_context.next){case 0:setAnnotations([].concat(Object(toConsumableArray["a" /* default */])(annotations),[selectedTweet.id]));request={id:selectedTweet.id,tweet:selectedTweet.tweet,annotations:[].concat(Object(toConsumableArray["a" /* default */])(selectedTweet?selectedTweet.annotations||[]:[]),[label.id]),annotatedBy:[].concat(Object(toConsumableArray["a" /* default */])(selectedTweet?selectedTweet.annotatedBy||[]:[]),[cookies[userKey]])};setSelectedTweet(null);_context.next=5;return runMutation(request);case 5:_yield$runMutation=_context.sent;key=_yield$runMutation.key;case 7:case"end":return _context.stop();}}},_callee);})),children:[/*#__PURE__*/Object(jsx_runtime["jsx"])("img",{className:classes.labelIcon,src:label.icon}),label.label]},label.id);})});}}),/*#__PURE__*/Object(jsx_runtime["jsx"])("div",{className:classes.buttons,children:/*#__PURE__*/Object(jsx_runtime["jsx"])(Button["a" /* default */],{variant:"contained",color:"secondary",onClick:function onClick(){return handleSkip(selectedTweet);},className:classes.button,children:"Skip :("})})]}),/*#__PURE__*/Object(jsx_runtime["jsx"])(dist_index_esm["b" /* FirebaseDatabaseNode */],{path:path,orderByKey:true,annotations:true,skipped:true,children:function children(d){if(!d.value){return null;}var selectedTweets=d.value.filter(function(tweet){return!annotations.includes(tweet.id)&&!skipped.includes(tweet.id);});selectedTweets=selectedTweets.filter(function(tweet){return tweet.annotations==null||tweet.annotations.length<3;});var selectedTweetId=selectedTweets[Math.floor(Math.random()*selectedTweets.length)].id;var tweetIndex=d.value.findIndex(function(tweet){return tweet.id===selectedTweetId;});if(cookies[userKey]&&d.value!=null&&selectedTweet==null){setSelectedTweet(Object(objectSpread2["a" /* default */])(Object(objectSpread2["a" /* default */])({},d.value[tweetIndex]),{},{pos:tweetIndex}));}return/*#__PURE__*/Object(jsx_runtime["jsx"])("div",{});}})]})})});}
 // CONCATENATED MODULE: ./src/components/App/App.js
@@ -163,5 +167,5 @@ src_reportWebVitals();
 
 /***/ })
 
-},[[213,1,2]]]);
-//# sourceMappingURL=main.92812d03.chunk.js.map
+},[[212,1,2]]]);
+//# sourceMappingURL=main.5245ad7d.chunk.js.map
