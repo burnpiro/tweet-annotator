@@ -7,7 +7,7 @@ import Paper from "@material-ui/core/Paper";
 import Link from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
 import { useCookies } from "react-cookie";
-import {annotationKey, skippedKey, userKey} from "../../config";
+import {annotationKey, skippedKey, userKey} from "../../helpers/settings";
 import useLocalStorage from "react-localstorage-hook";
 
 function Copyright() {
@@ -54,19 +54,21 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Layout({ children }) {
   const classes = useStyles();
-  const [cookies] = useCookies([annotationKey, userKey, skippedKey]);
-  const [storage, setStorage] = useLocalStorage(annotationKey);
-  const [skipped, setSkipped] = useLocalStorage(skippedKey);
+  const [cookies, setCookie] = useCookies([annotationKey, userKey, skippedKey]);
+  const [storage, setStorage] = useLocalStorage(annotationKey, []);
+  const [skipped, setSkipped] = useLocalStorage(skippedKey, []);
 
   const annotations = cookies[annotationKey] || []
   const skippedTweets = cookies[skippedKey] || []
 
   useEffect(() => {
-    if(storage == null || storage === []) {
+    if(storage == null || (Array.isArray(storage) && storage.length === 0) || storage === '') {
       setStorage(annotations);
+      setCookie(annotationKey, [])
     }
-    if(skipped == null || skipped === []) {
+    if(skipped == null || (Array.isArray(skipped) && skipped.length === 0) || skipped === '') {
       setSkipped(skippedTweets);
+      setCookie(skippedKey, [])
     }
   }, [])
 

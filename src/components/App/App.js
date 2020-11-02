@@ -5,10 +5,9 @@ import {
   FirebaseDatabaseProvider,
   FirebaseDatabaseNode,
 } from "@react-firebase/database";
-import Button from "@material-ui/core/Button";
 import { CookiesProvider } from "react-cookie";
 
-import { config } from "../../config";
+import { config } from "../../helpers/config";
 import Layout from "../Layout/Layout";
 import Form from "../Form/Form";
 

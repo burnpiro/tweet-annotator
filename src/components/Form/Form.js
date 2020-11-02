@@ -9,59 +9,9 @@ import Button from "@material-ui/core/Button";
 import { useCookies } from "react-cookie";
 import { nanoid } from "nanoid";
 import Tweet from "../Tweet/Tweet";
-import angIcon from "./anger.svg";
-import disIcon from "./disgusted.svg";
-import fearIcon from "./fear.svg";
-import guiltIcon from "./guilt.svg";
-import hapIcon from "./happiness.svg";
-import sadIcon from "./sad.svg";
-import shamIcon from "./shame.svg";
-import neutIcon from "./neutral.svg";
-import { annotationKey, skippedKey, userKey } from "../../config";
 import useLocalStorage from "react-localstorage-hook";
+import {labels, annotationKey, skippedKey, userKey} from "../../helpers/settings";
 
-const labels = [
-  {
-    id: "joy",
-    label: "Joy",
-    icon: hapIcon,
-  },
-  {
-    id: "fear",
-    label: "Fear",
-    icon: fearIcon,
-  },
-  {
-    id: "anger",
-    label: "Anger",
-    icon: angIcon,
-  },
-  {
-    id: "neutral",
-    label: "Neutral",
-    icon: neutIcon,
-  },
-  {
-    id: "sadness",
-    label: "Sadness",
-    icon: sadIcon,
-  },
-  {
-    id: "disgust",
-    label: "Disgust",
-    icon: disIcon,
-  },
-  {
-    id: "shame",
-    label: "Shame",
-    icon: shamIcon,
-  },
-  {
-    id: "guilt",
-    label: "Guilt",
-    icon: guiltIcon,
-  },
-];
 
 const useStyles = makeStyles((theme) => ({
   buttons: {
