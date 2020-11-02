@@ -95,7 +95,7 @@ export default function Tweet({ tweetContent = "", tweetId }) {
                 <TwitterTweetEmbed
                   onLoad={onLoad}
                   tweetId={tweetId}
-                  options={{ maxWidth: 800, }}
+                  options={{ maxWidth: 800, cards:"hidden" }}
                 />
               }
             </CardContent>
