@@ -83,7 +83,7 @@ export default function Layout({ children }) {
           <span style={{'flex': 1}} />
           {
             storage.length > 500 && <Typography variant="h6" color="inherit" noWrap>
-              Your ID is: <b style={{color: 'blue'}}>{cookies[userKey]} tweets</b>
+              Your ID is: <b style={{color: 'blue'}}>{cookies[userKey]}</b>
             </Typography>
           }
           <span style={{'flex': 1}} />
