@@ -2691,7 +2691,7 @@ __webpack_require__.d(__webpack_exports__, "a", function() { return /* binding *
 var react = __webpack_require__(0);
 
 // EXTERNAL MODULE: ./node_modules/lodash/memoize.js
-var memoize = __webpack_require__(64);
+var memoize = __webpack_require__(66);
 var memoize_default = /*#__PURE__*/__webpack_require__.n(memoize);
 
 // CONCATENATED MODULE: ./node_modules/render-and-add-props/dist/index.esm.js
@@ -2725,7 +2725,7 @@ var keys = __webpack_require__(34);
 var keys_default = /*#__PURE__*/__webpack_require__.n(keys);
 
 // EXTERNAL MODULE: ./node_modules/lodash/set.js
-var set = __webpack_require__(65);
+var set = __webpack_require__(67);
 var set_default = /*#__PURE__*/__webpack_require__.n(set);
 
 // CONCATENATED MODULE: ./node_modules/@react-firebase/database/dist/index.esm.js
@@ -4511,7 +4511,7 @@ module.exports = isIndex;
 /***/ (function(module, exports, __webpack_require__) {
 
 var isFunction = __webpack_require__(76),
-    isLength = __webpack_require__(63);
+    isLength = __webpack_require__(65);
 /**
  * Checks if `value` is array-like. A value is considered array-like if it's
  * not a function and has a `value.length` that's an integer greater than or
@@ -6073,7 +6073,9 @@ module.exports = sortBy;
 
 /***/ }),
 /* 54 */,
-/* 55 */
+/* 55 */,
+/* 56 */,
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6174,7 +6176,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 };
 
 /***/ }),
-/* 56 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8157,7 +8159,7 @@ exports.validateNamespace = validateNamespace;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(72)))
 
 /***/ }),
-/* 57 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var mapCacheClear = __webpack_require__(108),
@@ -8194,7 +8196,7 @@ MapCache.prototype.set = mapCacheSet;
 module.exports = MapCache;
 
 /***/ }),
-/* 58 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getNative = __webpack_require__(20),
@@ -8206,7 +8208,7 @@ var Map = getNative(root, 'Map');
 module.exports = Map;
 
 /***/ }),
-/* 59 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseIsArguments = __webpack_require__(133),
@@ -8248,10 +8250,10 @@ var isArguments = baseIsArguments(function () {
 module.exports = isArguments;
 
 /***/ }),
-/* 60 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var castPath = __webpack_require__(61),
+var castPath = __webpack_require__(63),
     toKey = __webpack_require__(33);
 /**
  * The base implementation of `_.get` without support for default values.
@@ -8278,11 +8280,11 @@ function baseGet(object, path) {
 module.exports = baseGet;
 
 /***/ }),
-/* 61 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isArray = __webpack_require__(16),
-    isKey = __webpack_require__(62),
+    isKey = __webpack_require__(64),
     stringToPath = __webpack_require__(135),
     toString = __webpack_require__(137);
 /**
@@ -8306,7 +8308,7 @@ function castPath(value, object) {
 module.exports = castPath;
 
 /***/ }),
-/* 62 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isArray = __webpack_require__(16),
@@ -8342,7 +8344,7 @@ function isKey(value, object) {
 module.exports = isKey;
 
 /***/ }),
-/* 63 */
+/* 65 */
 /***/ (function(module, exports) {
 
 /** Used as references for various `Number` constants. */
@@ -8381,10 +8383,10 @@ function isLength(value) {
 module.exports = isLength;
 
 /***/ }),
-/* 64 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var MapCache = __webpack_require__(57);
+var MapCache = __webpack_require__(59);
 /** Error message constants. */
 
 
@@ -8462,7 +8464,7 @@ memoize.Cache = MapCache;
 module.exports = memoize;
 
 /***/ }),
-/* 65 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseSet = __webpack_require__(203);
@@ -8503,14 +8505,14 @@ function set(object, path, value) {
 module.exports = set;
 
 /***/ }),
-/* 66 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(210);
 
 
 /***/ }),
-/* 67 */
+/* 69 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8580,8 +8582,6 @@ var Paper = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__["forwardRef"](functi
 })(Paper));
 
 /***/ }),
-/* 68 */,
-/* 69 */,
 /* 70 */,
 /* 71 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -8595,7 +8595,7 @@ Object.defineProperty(exports, '__esModule', {
 
 var tslib = __webpack_require__(38);
 
-var util = __webpack_require__(56);
+var util = __webpack_require__(58);
 
 var component = __webpack_require__(73);
 
@@ -9418,7 +9418,7 @@ Object.defineProperty(exports, '__esModule', {
 
 var tslib = __webpack_require__(38);
 
-var util = __webpack_require__(56);
+var util = __webpack_require__(58);
 /**
  * Component for service name T, e.g. `auth`, `auth-internal`
  */
@@ -12317,7 +12317,7 @@ function formatMuiErrorMessage(code) {
  */
 
 
-__webpack_require__(55);
+__webpack_require__(57);
 
 var f = __webpack_require__(0),
     g = 60103;
@@ -12383,7 +12383,7 @@ exports.jsxs = q;
  */
 
 
-var l = __webpack_require__(55),
+var l = __webpack_require__(57),
     n = 60103,
     p = 60106;
 
@@ -12808,7 +12808,7 @@ exports.version = "17.0.1";
 
 
 var aa = __webpack_require__(0),
-    m = __webpack_require__(55),
+    m = __webpack_require__(57),
     r = __webpack_require__(103);
 
 function y(a) {
@@ -20895,7 +20895,7 @@ var firebase = __webpack_require__(71);
 
 var tslib = __webpack_require__(38);
 
-var util = __webpack_require__(56);
+var util = __webpack_require__(58);
 
 var logger$1 = __webpack_require__(74);
 
@@ -38753,7 +38753,7 @@ exports.registerDatabase = registerDatabase;
 
 var Hash = __webpack_require__(109),
     ListCache = __webpack_require__(40),
-    Map = __webpack_require__(58);
+    Map = __webpack_require__(60);
 /**
  * Removes all key-value entries from the map.
  *
@@ -39442,7 +39442,7 @@ module.exports = baseFlatten;
 /***/ (function(module, exports, __webpack_require__) {
 
 var Symbol = __webpack_require__(30),
-    isArguments = __webpack_require__(59),
+    isArguments = __webpack_require__(61),
     isArray = __webpack_require__(16);
 /** Built-in value references. */
 
@@ -39491,7 +39491,7 @@ module.exports = baseIsArguments;
 /***/ (function(module, exports, __webpack_require__) {
 
 var arrayMap = __webpack_require__(80),
-    baseGet = __webpack_require__(60),
+    baseGet = __webpack_require__(62),
     baseIteratee = __webpack_require__(139),
     baseMap = __webpack_require__(186),
     baseSortBy = __webpack_require__(192),
@@ -39584,7 +39584,7 @@ module.exports = stringToPath;
 /* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var memoize = __webpack_require__(64);
+var memoize = __webpack_require__(66);
 /** Used as the maximum memoize cache size. */
 
 
@@ -39915,8 +39915,8 @@ module.exports = stackHas;
 /***/ (function(module, exports, __webpack_require__) {
 
 var ListCache = __webpack_require__(40),
-    Map = __webpack_require__(58),
-    MapCache = __webpack_require__(57);
+    Map = __webpack_require__(60),
+    MapCache = __webpack_require__(59);
 /** Used as the size to enable large array optimizations. */
 
 
@@ -40047,7 +40047,7 @@ module.exports = baseIsEqualDeep;
 /* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var MapCache = __webpack_require__(57),
+var MapCache = __webpack_require__(59),
     setCacheAdd = __webpack_require__(149),
     setCacheHas = __webpack_require__(150);
 /**
@@ -40588,7 +40588,7 @@ module.exports = stubArray;
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseTimes = __webpack_require__(164),
-    isArguments = __webpack_require__(59),
+    isArguments = __webpack_require__(61),
     isArray = __webpack_require__(16),
     isBuffer = __webpack_require__(84),
     isIndex = __webpack_require__(45),
@@ -40687,7 +40687,7 @@ module.exports = stubFalse;
 /***/ (function(module, exports, __webpack_require__) {
 
 var baseGetTag = __webpack_require__(29),
-    isLength = __webpack_require__(63),
+    isLength = __webpack_require__(65),
     isObjectLike = __webpack_require__(32);
 /** `Object#toString` result references. */
 
@@ -40869,7 +40869,7 @@ module.exports = overArg;
 /***/ (function(module, exports, __webpack_require__) {
 
 var DataView = __webpack_require__(173),
-    Map = __webpack_require__(58),
+    Map = __webpack_require__(60),
     Promise = __webpack_require__(174),
     Set = __webpack_require__(175),
     WeakMap = __webpack_require__(176),
@@ -41017,7 +41017,7 @@ module.exports = getMatchData;
 var baseIsEqual = __webpack_require__(82),
     get = __webpack_require__(179),
     hasIn = __webpack_require__(180),
-    isKey = __webpack_require__(62),
+    isKey = __webpack_require__(64),
     isStrictComparable = __webpack_require__(88),
     matchesStrictComparable = __webpack_require__(89),
     toKey = __webpack_require__(33);
@@ -41052,7 +41052,7 @@ module.exports = baseMatchesProperty;
 /* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGet = __webpack_require__(60);
+var baseGet = __webpack_require__(62);
 /**
  * Gets the value at `path` of `object`. If the resolved value is
  * `undefined`, the `defaultValue` is returned in its place.
@@ -41149,11 +41149,11 @@ module.exports = baseHasIn;
 /* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var castPath = __webpack_require__(61),
-    isArguments = __webpack_require__(59),
+var castPath = __webpack_require__(63),
+    isArguments = __webpack_require__(61),
     isArray = __webpack_require__(16),
     isIndex = __webpack_require__(45),
-    isLength = __webpack_require__(63),
+    isLength = __webpack_require__(65),
     toKey = __webpack_require__(33);
 /**
  * Checks if `path` exists on `object`.
@@ -41198,7 +41198,7 @@ module.exports = hasPath;
 
 var baseProperty = __webpack_require__(184),
     basePropertyDeep = __webpack_require__(185),
-    isKey = __webpack_require__(62),
+    isKey = __webpack_require__(64),
     toKey = __webpack_require__(33);
 /**
  * Creates a function that returns the value at `path` of a given object.
@@ -41253,7 +41253,7 @@ module.exports = baseProperty;
 /* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGet = __webpack_require__(60);
+var baseGet = __webpack_require__(62);
 /**
  * A specialized version of `baseProperty` which supports deep paths.
  *
@@ -41815,7 +41815,7 @@ module.exports = isIterateeCall;
 /***/ (function(module, exports, __webpack_require__) {
 
 var assignValue = __webpack_require__(204),
-    castPath = __webpack_require__(61),
+    castPath = __webpack_require__(63),
     isIndex = __webpack_require__(45),
     isObject = __webpack_require__(31),
     toKey = __webpack_require__(33);
@@ -47585,7 +47585,7 @@ if (false) {}
 /* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
 /* harmony import */ var _styles_withStyles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6);
 /* harmony import */ var _utils_capitalize__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8);
-/* harmony import */ var _Paper__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(67);
+/* harmony import */ var _Paper__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(69);
 
 
 
@@ -47784,7 +47784,7 @@ var Toolbar = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3__["forwardRef"](func
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(5);
 /* harmony import */ var _styles_withStyles__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(6);
-/* harmony import */ var _Paper__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(67);
+/* harmony import */ var _Paper__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(69);
 /* harmony import */ var _styles_colorManipulator__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(12);
 
 
@@ -48251,7 +48251,7 @@ if (false) { var requireProp; }
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(5);
-/* harmony import */ var _Paper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(67);
+/* harmony import */ var _Paper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(69);
 /* harmony import */ var _styles_withStyles__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(6);
 
 
@@ -49998,4 +49998,4 @@ function useTheme() {
 
 /***/ })
 ]]);
-//# sourceMappingURL=2.60c20da2.chunk.js.map
+//# sourceMappingURL=2.8cbca3f8.chunk.js.map
