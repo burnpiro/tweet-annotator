@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import AppBar from "@material-ui/core/AppBar";
@@ -10,13 +10,14 @@ import { useCookies } from "react-cookie";
 import {annotationKey, skippedKey, userKey} from "../../helpers/settings";
 import useLocalStorage from "react-localstorage-hook";
 
-function Copyright() {
+function Copyright({setShowId}) {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {"Built with React and Material UI for "}
       <Link color="inherit" href="https://pwr.edu.pl/en/">
         <b>WUST</b>
       </Link>{" "}
+      <span onClick={() => setShowId(true)}>:)</span>
       {"."}<br/><span style={{fontSize: 10}}>
       {"Icons made by "}
       <Link href="https://www.flaticon.com/authors/freepik" color="inherit" title="Freepik">Freepik</Link>
@@ -54,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Layout({ children }) {
   const classes = useStyles();
+  const [showId, setShowId] = useState(false);
   const [cookies, setCookie] = useCookies([annotationKey, userKey, skippedKey]);
   const [storage, setStorage] = useLocalStorage(annotationKey, []);
   const [skipped, setSkipped] = useLocalStorage(skippedKey, []);
@@ -82,7 +84,7 @@ export default function Layout({ children }) {
           </Typography>
           <span style={{'flex': 1}} />
           {
-            storage.length > 500 && <Typography variant="h6" color="inherit" noWrap>
+            (storage.length > 500 || showId) && <Typography variant="h6" color="inherit" noWrap>
               Your ID is: <b style={{color: 'blue'}}>{cookies[userKey]}</b>
             </Typography>
           }
@@ -96,7 +98,7 @@ export default function Layout({ children }) {
         <Paper className={classes.paper}>
           <React.Fragment>{children}</React.Fragment>
         </Paper>
-        <Copyright />
+        <Copyright setShowId={setShowId} />
       </main>
     </React.Fragment>
   );
