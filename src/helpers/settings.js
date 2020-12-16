@@ -20,7 +20,7 @@ export const labels = [
     icon: sadIcon,
   },
   {
-    id: "guilt",
+    id: "podziw",
     label: "Podziw",
     icon: admIcon,
   },
